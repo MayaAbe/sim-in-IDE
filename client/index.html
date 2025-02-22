@@ -1,0 +1,31 @@
+<!-- client/index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>物理シミュレーションIDE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="editor-container">
+            <h2>コードエディタ</h2>
+            <textarea id="code-editor" rows="20" cols="50">
+# サンプルコード
+# simulate関数はsimulation/spring_mass_damper.pyから提供されています
+result = simulate(mass=1.0, damping=0.2, stiffness=10.0, x0=1.0, v0=0.0, t_end=10.0, dt=0.01)
+print("シミュレーション完了")
+            </textarea>
+            <button id="run-btn">実行</button>
+            <pre id="console-output"></pre>
+        </div>
+        <div id="viewer-container">
+            <h2>シミュレーション結果</h2>
+            <canvas id="simulation-chart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <!-- Chart.jsライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
