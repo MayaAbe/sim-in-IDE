@@ -38,3 +38,8 @@ button {
     height: 20%;
     overflow-y: auto;
 }
+
+/* ビューア側のコントロール配置 */
+#viewer-controls {
+    margin-bottom: 10px;
+}

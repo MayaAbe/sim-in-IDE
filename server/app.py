@@ -1,12 +1,16 @@
 # server/app.py
 from flask import Flask, request, jsonify, send_from_directory
 import os
+import sys
 import io
 import contextlib
 
 app = Flask(__name__, static_folder='../client', static_url_path='')
 
 # ばね‐マス‐ダンパシミュレーションの関数をインポート
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+sys.path.insert(0, project_root)
+
 from simulation.spring_mass_damper import simulate
 
 @app.route('/')
